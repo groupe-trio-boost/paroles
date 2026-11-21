@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Recueil officiel des paroles des chansons du Groupe Trio Boost. Découvrez les textes complets des 11 morceaux du groupe.">
+  <meta name="theme-color" content="#0b0d12">
+  <title>Groupe Trio Boost — Les paroles</title>
+  <style>
+    /* ==========================================================================
+       1. VARIABLES & DESIGN TOKENS (Thème sombre épuré, contrastes WCAG AAA)
+       ========================================================================== */
+    :root {
+      --bg-primary: #0b0d12;
+      --bg-surface: #141821;
+      --bg-surface-hover: #1c2230;
+      --bg-active: #1e293b;
+      --border-subtle: #262d3d;
+      --border-active: #38bdf8;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --accent-primary: #38bdf8;
+      --accent-contrast: #082f49;
+      --focus-ring: #7dd3fc;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      --radius-sm: 0.5rem;
+      --radius-md: 0.75rem;
+      --radius-lg: 1rem;
+      --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+      --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ==========================================================================
+       2. RESET & FONDATIONS MOBILE-FIRST
+       ========================================================================== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    /* Gestion accessible du focus clavier */
+    :focus-visible {
+      outline: 3px solid var(--focus-ring);
+      outline-offset: 2px;
+    }
+
+    /* Lien d'évitement (Accessibilité clavier / lecteurs d'écran) */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      z-index: 100;
+      background-color: var(--accent-primary);
+      color: var(--accent-contrast);
+      font-weight: 700;
+      padding: 0.75rem 1.25rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: top var(--transition-fast);
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    /* ==========================================================================
+       3. STRUCTURE PRINCIPALE (Header, Layout, Footer)
+       ========================================================================== */
+    .site-header {
+      background-color: var(--bg-surface);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+
+    .header-inner {
+      max-width: 72rem;
+      margin: 0 auto;
+    }
+
+    .site-title {
+      margin: 0;
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .site-subtitle {
+      margin: 0.35rem 0 0;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-weight: 500;
+      color: var(--accent-primary);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* Conteneur central responsive */
+    .layout-container {
+      width: 100%;
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 2.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* ==========================================================================
+       4. NAVIGATION PRINCIPALE (Mobile-first : accordéon/liste tactile >= 48px)
+       ========================================================================== */
+    .primary-nav {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .nav-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .nav-heading {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    .nav-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-height: 48px;
+      padding: 0.5rem 1rem;
+      background-color: var(--bg-surface-hover);
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .nav-toggle-btn:hover {
+      background-color: var(--bg-active);
+      border-color: var(--accent-primary);
+    }
+
+    .nav-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+
+    /* État replié sur mobile lorsque l'utilisateur ferme le sommaire */
+    .nav-list.is-collapsed {
+      display: none;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      min-height: 48px;
+      padding: 0.65rem 0.9rem;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      color: var(--text-secondary);
+      background-color: transparent;
+      border: 1px solid transparent;
+      font-size: 0.98rem;
+      font-weight: 500;
+      transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .nav-link:hover {
+      background-color: var(--bg-surface-hover);
+      color: var(--text-primary);
+    }
+
+    .nav-link[aria-current="page"] {
+      background-color: var(--bg-active);
+      color: var(--text-primary);
+      border-color: var(--border-active);
+      font-weight: 700;
+    }
+
+    .track-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2rem;
+      height: 2rem;
+      padding: 0 0.4rem;
+      border-radius: var(--radius-sm);
+      background-color: var(--bg-primary);
+      color: var(--accent-primary);
+      font-size: 0.85rem;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      border: 1px solid var(--border-subtle);
+      flex-shrink: 0;
+    }
+
+    .nav-link[aria-current="page"] .track-badge {
+      background-color: var(--accent-primary);
+      color: var(--accent-contrast);
+      border-color: var(--accent-primary);
+    }
+
+    /* ==========================================================================
+       5. CONTENU PRINCIPAL & AFFICHAGE DES PAROLES
+       ========================================================================== */
+    .main-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .song-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.25rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .song-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .song-number-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--accent-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .song-title {
+      margin: 0.35rem 0 0;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.25;
+    }
+
+    /* Préservation stricte de la mise en forme et des sauts de ligne originaux */
+    .lyrics-body {
+      margin: 0;
+      font-family: var(--font-sans);
+      font-size: clamp(1.05rem, 2.5vw, 1.15rem);
+      line-height: 1.75;
+      color: var(--text-primary);
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    /* Barre de pagination Précédent / Suivant */
+    .song-pagination {
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-subtle);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .page-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-height: 48px;
+      padding: 0.75rem 1rem;
+      background-color: var(--bg-surface-hover);
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background-color var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .page-btn:hover {
+      background-color: var(--bg-active);
+      border-color: var(--accent-primary);
+    }
+
+    .page-btn[aria-disabled="true"] {
+      opacity: 0.45;
+      pointer-events: none;
+    }
+
+    /* ==========================================================================
+       6. FOOTER
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .site-footer p {
+      margin: 0;
+      max-width: 72rem;
+      margin-inline: auto;
+    }
+
+    /* ==========================================================================
+       7. BREAKPOINTS RESPONSIVE (Tablette & Desktop)
+       ========================================================================== */
+    @media (min-width: 640px) {
+      .nav-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .song-card {
+        padding: 2rem;
+      }
+
+      .song-pagination {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 960px) {
+      .layout-container {
+        display: grid;
+        grid-template-columns: 20rem minmax(0, 1fr);
+        align-items: start;
+        gap: 2rem;
+        padding: 2rem 1.5rem 3rem;
+      }
+
+      .primary-nav {
+        position: sticky;
+        top: 1.5rem;
+      }
+
+      .nav-toggle-btn {
+        display: none;
+      }
+
+      .nav-list,
+      .nav-list.is-collapsed {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .song-card {
+        padding: 2.5rem 3rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="site-title">Groupe Trio Boost</h1>
+      <p class="site-subtitle">Les paroles</p>
+    </div>
+  </header>
+
+  <!-- CONTENEUR PRINCIPAL -->
+  <div class="layout-container">
+    <!-- NAVIGATION PRINCIPALE -->
+    <nav class="primary-nav" aria-label="Navigation principale">
+      <div class="nav-header">
+        <h2 class="nav-heading" id="nav-heading">Liste des chansons</h2>
+        <button
+          type="button"
+          class="nav-toggle-btn"
+          id="nav-toggle"
+          aria-expanded="true"
+          aria-controls="song-nav-list"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <span id="nav-toggle-label">Masquer</span>
+        </button>
+      </div>
+      <ul class="nav-list" id="song-nav-list" aria-labelledby="nav-heading">
+        <!-- Les liens vers les 10 chansons sont générés dynamiquement et accessibles sans délai -->
+      </ul>
+    </nav>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main id="main-content" class="main-content" tabindex="-1">
+      <article class="song-card" aria-labelledby="current-song-title">
+        <header class="song-meta">
+          <div>
+            <span class="song-number-label" id="current-song-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 18V5l12-2v13"></path>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="16" r="3"></circle>
+              </svg>
+              <span id="current-song-index">Piste 01 / 11</span>
+            </span>
+            <h2 class="song-title" id="current-song-title">01 - Mélo test</h2>
+          </div>
+        </header>
+
+        <!-- Texte intégral strictement préservé -->
+        <div class="lyrics-body" id="current-song-lyrics">Introduction : Mélo test
+
+C'est le générique, de ma musique !
+C'est un trafic !!! cette musique !!!!</div>
+
+        <!-- Navigation séquentielle entre les pages chansons -->
+        <nav class="song-pagination" aria-label="Navigation entre les chansons">
+          <a href="#chanson-11" class="page-btn" id="prev-song-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span id="prev-song-label">Précédente</span>
+          </a>
+          <a href="#chanson-2" class="page-btn" id="next-song-btn">
+            <span id="next-song-label">Suivante</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </nav>
+      </article>
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Groupe Trio Boost — Tous droits réservés. La musique avant tout.</p>
+  </footer>
+
+  <script>
+    /**
+     * Base de données des chansons du Groupe Trio Boost.
+     * Les paroles sont conservées à l'identique (orthographe, ponctuation, sauts de ligne).
+     */
+    const SONGS = [
+      {
+        id: "chanson-1",
+        number: "01",
+        title: "01 - Mélo test",
+        shortTitle: "Mélo test",
+        lyrics: `Introduction : Mélo test
+
+C'est le générique, de ma musique !
+C'est un trafic !!! cette musique !!!!`
+      },
+      {
+        id: "chanson-2",
+        number: "02",
+        title: "02 - Chanson 2022",
+        shortTitle: "Chanson 2022",
+        lyrics: `Chanson 2022
+
+Au début de l'année, mon anniversaire à l'heure du goûter
+Moi et Mika, nos nouveauxâges passés à la salle polyvalente de Cissé
+Pour Anne-Loup, j'avais 24 ans
+Elle m'a dit, j'ai inversé, c'est du Verlan
+Sam le pompier
+A pris son pied
+Déclic remange d'autres lichettes
+Toujours avec sa casquette
+
+L'année sera passée
+La chanson sera terminée
+
+D'autre chansons à entendre
+De la part d'Alexandre
+Les parents de Zouzou 
+Etaient au rendez vous
+Quant à Renaud
+Il a nettoyé le reseau
+Préparatifs, à l'aide de Cyril
+Lui Mika et moi, en tête de file
+Diffusion en vidéo projecteur
+Grâce à celui de mon papa pour mon plus grand bonheur
+
+L'année sera passée
+La chanson sera terminée
+
+Sandrine, Céline et Mathieu, les invités de Mika
+Ont apporté des compléments au repas
+Oh, punaise !!! c'est quarente-deux ans
+Comme dirait Tac en me taquinant
+Bruno et Sokleang, un couple d'ami
+Etaient de la partie
+
+L'année sera passée
+La chanson sera terminée
+L'année est passée
+Mais la chanson est terminée
+
+Merci à tous
+D'avoir donné un coup de pouce
+
+Une chanson finie
+Pour une année bien remplie`
+      },
+      {
+        id: "chanson-3",
+        number: "03",
+        title: "03 - Comme je suis",
+        shortTitle: "Comme je suis",
+        lyrics: `Comme je suis
+
+Un beau jour
+j'aurai des beaux discours
+Un jour, je serai diplomate
+Un jour, je mangerai des tomates
+Pas trop de coca pour m'en sortir
+Mais c'est quand même du plaisiiiirrr !
+
+Dans la vie, il faut faire ce qu'il faut
+Mais jamais en faire trop
+Les technologies pour simplifier la vie
+Mais faut faire le bon compromis
+
+Un jour j'aimerai lire
+Mais c'est pas trop mon délire
+En tout cas j'adore la musique
+Ainsi que l'informatique
+Les films comiques
+La piscine, la danse, le chant, le vélo
+Le billard et les jeux vidéo
+
+Dans la vie, il faut faire ce qu'il faut
+Mais jamais en faire trop
+Les technologies pour simplifier la vie
+Mais faut faire le bon compromis`
+      },
+      {
+        id: "chanson-4",
+        number: "04",
+        title: "04 - 2 blues lovers",
+        shortTitle: "2 blues lovers",
+        lyrics: `2 blues lovers
+
+C'était un matin
+Sur mon chemin
+Un jeune homme galant
+Qui n'est pas lent
+Mais, gaaaallllaaaant
+Avec un regard attendrissant
+Très gentil, agréable et souriant
+Beaucoup de savoir faire
+Que des qualités, super
+
+Mon cher Blues
+Une pensée en bluetooth
+Ma chère Blues
+Connectons le bluetooth
+
+Qui se ressemble 
+s'assemble, ensemble
+On s'envole doucement
+Mais, surrrreeemeeennnttt
+
+
+C'était la chanson de 2 blues lovers`
+      },
+      {
+        id: "chanson-5",
+        number: "05",
+        title: "05 - Je mixe",
+        shortTitle: "Je mixe",
+        lyrics: `Je mixe
+
+Ma soupe, je mixe
+Je fais des remix
+Ma soupe avec des morceaux
+Je mixe à nouveau
+
+Avant que je stop
+Avoir des chansons top
+Ma cuisine artistique
+Je la livre en musique
+Ca rechauffe le corps
+Quand il fait froid dehors
+
+Ma soupe, je mixe
+Je fais des remix
+Ma soupe avec des morceaux
+Je mixe à nouveau
+
+C'est bon pour la santé
+Souper et puis chanter
+Une soupe veloutée
+J'en veux volentiers
+Une soupe à l'oignon
+C'est aussi très bon
+
+Ma soupe, je mixe
+Je fais des remix
+Ma soupe avec des morceaux
+Je mixe à nouveau
+
+C'est l'heure du dîner
+Il faut se rassembler
+Une chanson qui me ressemble
+J'écris et puis j'assemble
+
+Ma soupe, je mixe
+Je fais des remix
+Ma soupe avec des morceaux
+Je mixe à nouveau
+Ma soupe, je mixe
+Je fais des remix
+Ma soupe, je mixe
+Je fais des remix !`
+      },
+      {
+        id: "chanson-6",
+        number: "06",
+        title: "06 - C'est good",
+        shortTitle: "C'est good",
+        lyrics: `C'est good
+
+L'entretien
+Ca fait du bien
+Boire et manger
+Un bon projet
+Aller travailler
+Décoller de l'oreiller
+C'est super l'amitié
+Quand on peut s'y fier
+
+C'est bon, c'est good
+Goût de la montagne
+C'est bon, c'est good
+Goût des lasagnes
+C'est bon, c'est good
+Goût du tennis
+C'est bon, c'est good
+Goût du pain d'épice
+
+L'amour qui t'apporte plus
+C'est de l'amour en plus
+Photos, vidéos, les écrits
+Souvenir de la vie
+
+C'est bon, c'est good
+Goût de la montagne
+C'est bon, c'est good
+Goût des lasagnes
+C'est bon, c'est good
+Goût du tennis
+C'est bon, c'est good
+Goût du pain d'épice
+
+
+Good game
+c'est un jeu que j'aime
+Bon rire
+Tu me fais courir...`
+      },
+      {
+        id: "chanson-7",
+        number: "07",
+        title: "07 - Tonton DJ",
+        shortTitle: "Tonton DJ",
+        lyrics: `Tonton DJ
+
+Plusieurs fois, nous sommes allés à Lonchard
+A chaque fois, on se marre
+Avec la famille, dont tonton DJ
+Ça va déchirer
+
+Je chante en plus pour lui
+Sans aucun soucis
+Moi Eléa
+Je lui prête ma voix 
+Pour tonton DJ
+Une chanson cadencée
+
+Pourquoi pas, un tournoi de Mario kart
+On appuie sur start
+Avec papi, on voit des souterrains
+Ça tombe bien, on n'est pas venu pour rien 
+
+Et voilà moi Eléa
+Je lui prête ma voix
+Pour tonton DJ
+Notre chanson cadencée`
+      },
+      {
+        id: "chanson-8",
+        number: "08",
+        title: "08 - Berceuse à venir",
+        shortTitle: "Berceuse à venir",
+        lyrics: `Berceuse à venir
+
+J'écris qu'il faut que tu respires
+Prends ton souffle et puis soupire
+Une veilleuse la nuit
+Une lueur s’éclaircit
+Mes yeux s'alourdissent petit à petit
+
+J'espère que tu vas sourire
+Et que tu vas bien dormir
+Pendant ce temps je vais écrire
+Une histoire pour t'endormir
+
+Je me mets à rêver
+J'étais lessiver, J'étais rincé
+Voilà que je rêve de machine à laver
+J'ai fais un si beau rêve
+Car tu chantonnais tout le temps
+En atteignant le soleil levant
+
+J'espère que tu vas sourire
+Et que tu vas bien dormir
+Pendant ce temps je vais écrire
+Une histoire pour t'endormir
+
+Une fois levée
+J'espère passer une bonne journée
+Une journée sans flotte
+Et puis le soir rebelote
+
+J'espère que tu vas sourire
+Et que tu vas bien dormir
+Pendant ce temps je vais écrire
+Une histoire pour t'endormir
+
+Les bonnes habitudes
+C'est bien mon habitude
+Je passe la main
+Pour les prochains ...`
+      },
+      {
+        id: "chanson-9",
+        number: "09",
+        title: "09 - Avec toi",
+        shortTitle: "Avec toi",
+        lyrics: `Avec toi
+
+Léana ma beauté
+J'me sens en lien, la musique est plus belle avec toi quand t'es là
+Ce soir est-ce que tu pourras me voir 
+Moi je sais bien danser
+Mais j'me sens en lien
+La musique est plus belle avec toi 
+
+Ouh-ouh, beauté 
+J'me sens en lien 
+la musique plus belle avec Léana
+Ce soir ,est-ce que tu pourras me voir
+Moi je sais bien danser
+Mais j'me sens en lien
+la musique plus belle avec toi 
+Ce soir, peut-être que tu pourras me voir
+
+Léana ma beauté,
+J'me sens en lien 
+La musique est plus belle avec toi quand t'es là
+Ce soir,est-ce que tu voudra de moi
+Moi je sais bien danser
+Mais j'me sens en lien 
+La musique est plus belle avec toi
+Ce soir, est-ce que tu pourras me voir
+
+
+Est-ce que tu veux (danser)
+Est-ce que tu veux (ce soir)
+Est-ce que tu voudras de moi
+Est ce que tu voudras (ce soir)
+Est-ce que tu voudras (danser)
+Est-ce que tu voudras (Ce soir)
+Est-ce que tu voudras (danser)
+Est-ce que tu voudras (ce soir)
+Est-ce que tu pourras me voir
+
+(Dj Alex + Dj Vinçou = musique qui bouge)`
+      },
+      {
+        id: "chanson-10",
+        number: "10",
+        title: "10 - Le thé de la vérité",
+        shortTitle: "Le thé de la vérité",
+        lyrics: `Le thé de la vérité
+
+Remix, Dj rien. C'est tout de le dire.
+J'ai quelque chose d'important à te dire.
+
+Y a tout là !!!
+Ensemble, on est bien
+Je te fais galoper pour ton bien
+Tu ne fait pas assez de sport, allez viens.
+
+J' t'embarque dans une barque.
+Tu es tombé poule mouillée.
+Merci poule séchée.
+Je t'ai fait dessalé.
+Avec toi, je vais nager.
+
+Y a tout là !!!
+Ensemble, on est bien
+Je te fais galoper pour ton bien
+Tu ne fait pas assez de sport, allez viens.
+
+T'as le regard coquin
+Moi j'y suis pour rien
+Je parlais juste à Alexandrin
+J'ai un vêtement complice
+Va pas croire que j'ai un complice
+Je soudoie Alexandre Soboua
+On va rigoler tous les 3
+On se fait un thé
+Une pause s'impose
+On le boit et on cause
+Je serais toute la vérité
+
+Y a tout là !!!
+Ensemble, on est bien
+Je te fais galoper pour ton bien
+Tu ne fait pas assez de sport, allez viens.
+
+
+Mine de rien
+Vous me laissez sur ma fin
+C'est bizarre, bizarre...
+Le souk, le bazar !!!!
+Faut pas se faire de mourons
+Ça marchera mieux avec des incompréhensions
+C'est tout là !!!
+Y a rien là !!!
+Y a rien là.`
+      },
+      {
+        id: "chanson-11",
+        number: "11",
+        title: "11 - Poème d'Anne-Loup",
+        shortTitle: "Poème d'Anne-Loup",
+        lyrics: `Poème d'Anne-Loup
+
+Je vais synthétiser
+Ma surdité, mes crises d'épilepsies
+Ces 2 raisons m'ont ralentie
+Gauchère contrariée
+Résultat, bloquée
+Mes études, un échec, rabaissée
+
+J'ai commencé à m'insulter
+Je n'ai jamais jugé quiconque, ni frappé
+Reconnue hyperactive
+Toujours active
+Toujours active
+Des expériences inspirées, par la nature, les objets
+Mes origines les chercher
+Mon arbre généalogique, le réaliser
+
+Reportages qui ont à trait
+Animaux, tout le système des planètes à l'infini, sujet d'actualité
+Elargir mes connaissances, écouter
+Mes défauts, les bons conseils données
+Je tiens compte pour avancer, faire des efforts, des progrès
+Tous animaux considérés comme les miens, les soigner
+Ceux qui sont en danger, les mettre en sécurité
+
+Entourage, bonheur, heureux, santé
+Les nouvelles fraîches : pour nous rassurer
+Je suis une petite souris
+Naturellement, je souris
+A ceux qui n'arrivent pas à sourire
+Ultérieurement, ils pourront sourire
+En retour je n'attend rien
+Pour moi un sourire ce n'est rien
+
+Les défauts d'autrui, je ne les vois pas : les yeux fermés
+J'ai vérifié, c'estla vérité
+Heureuse d'aller au travail, j'ai toujours chanté
+Un cadeau d'accomplir le travail demandé
+Un échec, dessus, je n'aime pas rester
+Avec l'énergie, ça m'a aidée à me métamorphoser
+Une victoire réussie, la solution est trouvée
+Contente parmi mes pairs
+Qui sont supers
+
+Nous adorons travailler dans une bonne ambiance, rigoler
+Ca vaut un bon bifteck de plaisanter
+Sous des boulot, sous des peupliers
+Nous pouffons, nous somme un peu pliés
+Otaquin adore également vous taquiner, vous fair galoper
+Vous risquez de vous retrouver
+Loin, parcourir la muraille de Chine
+
+Je sais chiner
+J'ai appris à chiner
+En voyage en Chine
+Des liasses que j'enliasse
+Vingt sous, 120 ELIAS
+Se lasse d'être enlacé
+120 € a des lacets enlacés
+Avez vous vu Vinçou enlacé ?
+J'ose vour traiter
+De petits sacripants, garnements, chenapans
+J'ai oublié d'en acheter et pourtant ...
+
+Bande de petits sacripants ...
+
+Poème made in Anne-Loup
+
+Secrétaire : Vinçou`
+      }
+    ];
+
+    (function initApp() {
+      const navListEl = document.getElementById("song-nav-list");
+      const navToggleBtn = document.getElementById("nav-toggle");
+      const navToggleLabel = document.getElementById("nav-toggle-label");
+      const mainContentEl = document.getElementById("main-content");
+      const songIndexEl = document.getElementById("current-song-index");
+      const songTitleEl = document.getElementById("current-song-title");
+      const songLyricsEl = document.getElementById("current-song-lyrics");
+      const prevBtn = document.getElementById("prev-song-btn");
+      const prevLabel = document.getElementById("prev-song-label");
+      const nextBtn = document.getElementById("next-song-btn");
+      const nextLabel = document.getElementById("next-song-label");
+
+      // Construction des liens de navigation
+      function buildNavigation() {
+        const fragment = document.createDocumentFragment();
+        SONGS.forEach((song) => {
+          const li = document.createElement("li");
+          const link = document.createElement("a");
+          link.href = `#${song.id}`;
+          link.className = "nav-link";
+          link.dataset.songId = song.id;
+
+          const badge = document.createElement("span");
+          badge.className = "track-badge";
+          badge.textContent = song.number;
+
+          const text = document.createElement("span");
+          text.textContent = song.shortTitle;
+
+          link.appendChild(badge);
+          link.appendChild(text);
+          li.appendChild(link);
+          fragment.appendChild(li);
+        });
+        navListEl.appendChild(fragment);
+      }
+
+      // Affichage d'une chanson selon l'identifiant
+      function renderSong(songId, shouldScrollAndFocus = false) {
+        const index = SONGS.findIndex((s) => s.id === songId);
+        const safeIndex = index !== -1 ? index : 0;
+        const currentSong = SONGS[safeIndex];
+
+        // Mise à jour du contenu principal (textContent préserve 100 % des caractères)
+        songIndexEl.textContent = `Piste ${currentSong.number} / ${String(SONGS.length).padStart(2, "0")}`;
+        songTitleEl.textContent = currentSong.title;
+        songLyricsEl.textContent = currentSong.lyrics;
+
+        // Mise à jour du titre de la page (SEO & Accessibilité)
+        document.title = `${currentSong.title} — Groupe Trio Boost | Les paroles`;
+
+        // Mise à jour de l'état aria-current="page" dans la navigation
+        const navLinks = navListEl.querySelectorAll(".nav-link");
+        navLinks.forEach((link) => {
+          if (link.dataset.songId === currentSong.id) {
+            link.setAttribute("aria-current", "page");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+
+        // Mise à jour des boutons Précédente / Suivante
+        const prevSong = SONGS[(safeIndex - 1 + SONGS.length) % SONGS.length];
+        const nextSong = SONGS[(safeIndex + 1) % SONGS.length];
+
+        prevBtn.href = `#${prevSong.id}`;
+        prevLabel.textContent = `${prevSong.number}. ${prevSong.shortTitle}`;
+
+        nextBtn.href = `#${nextSong.id}`;
+        nextLabel.textContent = `${nextSong.number}. ${nextSong.shortTitle}`;
+
+        if (shouldScrollAndFocus) {
+          mainContentEl.focus({ preventScroll: true });
+          mainContentEl.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      // Gestion du bouton repliable sur mobile
+      navToggleBtn.addEventListener("click", () => {
+        const isExpanded = navToggleBtn.getAttribute("aria-expanded") === "true";
+        const nextState = !isExpanded;
+        navToggleBtn.setAttribute("aria-expanded", String(nextState));
+        navListEl.classList.toggle("is-collapsed", !nextState);
+        navToggleLabel.textContent = nextState ? "Masquer" : "Afficher";
+      });
+
+      // Écoute des changements d'URL (routage par hash)
+      window.addEventListener("hashchange", () => {
+        const hashId = window.location.hash.replace("#", "");
+        if (hashId && hashId !== "main-content") {
+          renderSong(hashId, true);
+        }
+      });
+
+      // Initialisation
+      buildNavigation();
+      const initialHash = window.location.hash.replace("#", "");
+      renderSong(initialHash && initialHash !== "main-content" ? initialHash : SONGS[0].id, false);
+    })();
+  </script>
+</body>
+</html>
